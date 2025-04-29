@@ -1,0 +1,169 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for Said El Dah
+% - Disables hyphenation and uses \sloppy to avoid word breaks
+% - Two-line contact info
+% - Page numbers at the bottom center
+% - Uniform font for Summary and Skills
+% - Work Experience entries with the company name first
+% - Languages displayed horizontally (language in bold, level in normal text)
+% - Education with institution first
+
+\documentclass[]{awesome-cv}
+
+% --------------------------------------------------------------------------
+% Load packages
+% --------------------------------------------------------------------------
+\usepackage[none]{hyphenat}  % Disable all hyphenation
+\sloppy                      % Loosen line-breaking to avoid overfull lines
+\usepackage{multicol}        % For multi-column formatting (Skills section)
+\usepackage{textcomp}        % For extra symbols
+\usepackage{hyperref}        % For clickable links
+\usepackage{fancyhdr}        % For page headers/footers
+
+% --------------------------------------------------------------------------
+% Font & Color Setup
+% --------------------------------------------------------------------------
+\fontdir[fonts/]
+\colorlet{awesome}{awesome-red}
+
+% --------------------------------------------------------------------------
+% Commands
+% --------------------------------------------------------------------------
+% A command for job description text font
+\newcommand{\cvtextfont}{\sffamily\normalsize}
+
+% A command for summary text using the job description font
+\newcommand{\cvsummary}[1]{{\cvtextfont \descriptionstyle{#1}}}
+
+% --------------------------------------------------------------------------
+% Page Number Setup
+% --------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}                % Clear all header/footer fields
+\fancyfoot[C]{\thepage}   % Page number in center of footer
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% --------------------------------------------------------------------------
+\begin{document}
+
+% --------------------------------------------------------------------------
+% Profile Header
+% --------------------------------------------------------------------------
+\begin{center}
+  \headerlastnamestyle{John} \headerlastnamestyle{Doe} \\[2mm]
+
+  % First row of contact info
+  \descriptionstyle{{\faEnvelope\ \href{mailto:john.doe@example.com}{john.doe@example.com}}}
+  \quad
+  \descriptionstyle{{\faMobile\ +1-555-123-4567}}
+  \quad
+  \descriptionstyle{{\faMapMarker\ New York, USA}} \\[1mm]
+
+  % Second row of contact info
+  \descriptionstyle{{\faLinkedin\ \href{https://www.linkedin.com/in/johndoe}{linkedin.com/in/johndoe}}}
+  \quad
+  \descriptionstyle{{\faGithub\ \href{https://github.com/johndoe}{github.com/johndoe}}}
+\end{center}
+
+% --------------------------------------------------------------------------
+% Summary Section
+% --------------------------------------------------------------------------
+\cvsection{Summary}%
+\cvsummary{Senior Software Engineer with 10+ years of experience in designing and implementing distributed systems, microservices, and cloud-native applications. Skilled in Java, Python, C\#, and cloud platforms (AWS, GCP). Strong track record of technical leadership, cross-functional collaboration, and delivering scalable enterprise solutions.}
+
+% --------------------------------------------------------------------------
+% Skills Section
+% --------------------------------------------------------------------------
+\cvsection{Skills}
+{\cvtextfont
+\begin{multicols}{2}
+\begin{itemize}[leftmargin=*, itemsep=0.2em, topsep=0pt, parsep=0pt]
+  \item \descriptionstyle{\textbf{Programming \& Scripting Languages:} Java, C\#, Python, JavaScript, TypeScript, Swift, Go, Ruby, Kotlin, PowerShell, Bash}
+  \item \descriptionstyle{\textbf{Frameworks \& Libraries:} Spring Boot, .NET Core, Django, React, Angular, Vue.js, Flutter, TensorFlow, Node.js, Express}
+  \item \descriptionstyle{\textbf{Markup \& Configuration:} HTML, CSS, SASS, Helm Chart, Terraform, YAML, JSON, XML, GraphQL}
+  \item \descriptionstyle{\textbf{Software Engineering \& Architecture:} Design~Patterns, Microservices, Domain-Driven~Design, Scalability, 
+  Event-Driven Architecture, Service-Oriented~Architecture (SOA), 
+  REST API Design, CQRS, Event~Sourcing, Resilient Systems, Observability, Security~Best~Practices,
+  Enterprise~Integration~Patterns, Containerization, CI/CD~Pipelines, DevOps}
+\end{itemize}
+
+\columnbreak
+
+\begin{itemize}[leftmargin=*, itemsep=0.2em, topsep=0pt, parsep=0pt]
+  \item \descriptionstyle{\textbf{Database Technologies:} PostgreSQL, MySQL, SQL Server, MongoDB, Redis, Cassandra, DynamoDB, ElasticSearch, Neo4j, Firebase}
+  \item \descriptionstyle{\textbf{Cloud Platforms:} AWS (EC2, S3, Lambda), GCP (Compute Engine, Cloud Functions), Azure (App Service, Functions), Heroku, DigitalOcean}
+  \item \descriptionstyle{\textbf{DevOps \& Tools:} Docker, Kubernetes, Jenkins, GitHub Actions, CircleCI, Prometheus, Grafana, ELK Stack, Ansible, Terraform}
+  \item \descriptionstyle{\textbf{Project \& Team Management:} Agile, Scrum, Kanban, JIRA, Confluence, Technical Leadership, Mentoring, Code Reviews, Documentation, Technical Roadmapping, Team Building, Cross-functional Collaboration}
+\end{itemize}
+\end{multicols}
+}
+
+% --------------------------------------------------------------------------
+% Work Experience Section
+% --------------------------------------------------------------------------
+
+\cvsection{Work Experience}
+\begin{cventries}
+
+  % Entry 1:
+  \cventry
+    {TechCorp Inc.}  
+    {Lead Software Engineer}  
+    {New York, USA}  
+    {01/2020 -- Present}  
+    {%
+      \begin{cvitems}
+        \item {Led a \textbf{cross-functional team of five engineers}, defining the technical strategy for the \textbf{Data Processing Platform}. Improved processing efficiency by \textbf{8x}, reducing processing time from \textbf{3 hours to 20 minutes}, yielding \textbf{\$5M in cost savings}.}
+        \item {Spearheaded the \textbf{Route Optimization Project}, managing a team to integrate \textbf{route selection with fleet management}. Built a system processing \textbf{2,000+ events/min at 99\% availability}, automating updates from \textbf{hours to seconds}.}
+        \item {Led development of the \textbf{Data Validation Engine}, implementing a \textbf{scalable validation framework}. Reduced data errors by \textbf{85\%}, preventing system disruptions and improving reliability.}
+      \end{cvitems}
+    }
+    {Java/SpringBoot, C\#/.NET, Python, SQL Server, Redis, BigQuery, Kafka, GCP, ElasticSearch, Kubernetes, Docker, GIT.}
+
+    % Entry 2:
+  \cventry
+  {TechCorp Inc.}  
+  {Software Engineer}  
+  {New York, USA}  
+  {01/2020 -- Present}  
+  {%
+    \begin{cvitems}
+      \item {Led a \textbf{cross-functional team of five engineers}, defining the technical strategy for the \textbf{Data Processing Platform}. Improved processing efficiency by \textbf{8x}, reducing processing time from \textbf{3 hours to 20 minutes}, yielding \textbf{\$5M in cost savings}.}
+      \item {Spearheaded the \textbf{Route Optimization Project}, managing a team to integrate \textbf{route selection with fleet management}. Built a system processing \textbf{2,000+ events/min at 99\% availability}, automating updates from \textbf{hours to seconds}.}
+      \item {Led development of the \textbf{Data Validation Engine}, implementing a \textbf{scalable validation framework}. Reduced data errors by \textbf{85\%}, preventing system disruptions and improving reliability.}
+    \end{cvitems}
+  }
+  {Java/SpringBoot, C\#/.NET, Python, SQL Server, Redis, BigQuery, Kafka, GCP, ElasticSearch, Kubernetes, Docker, GIT.}
+\end{cventries}
+
+% --------------------------------------------------------------------------
+% Languages Section (Horizontal, left-aligned)
+% --------------------------------------------------------------------------
+\cvsection{Languages}
+{\cvtextfont
+\descriptionstyle{\textbf{English} (Full professional proficiency, C1)\quad\quad}
+\descriptionstyle{\textbf{German} (Elementary proficiency, B1)}
+}
+
+% --------------------------------------------------------------------------
+% Education Section
+% --------------------------------------------------------------------------
+\cvsection{Education}
+\begin{cventries}
+  \eduentry
+    {Example University}
+    {M.Sc in Computer Science}
+    {City, Country}
+    {2010 -- 2012}
+    
+  \eduentry
+    {Sample Technical Institute}
+    {B.Sc in Software Engineering}
+    {Another City, Country}
+    {2005 -- 2009}
+    
+\end{cventries}
+
+\end{document}
